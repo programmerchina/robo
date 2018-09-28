@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贞子</title>
+	<link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+
+	<section>
+		<div class="dd">贞子<span>iphone X在线</span></div>
+		<ul id="uu">
+			<li class="left"><span><img src="imgs/u=1264734548,3207478775&fm=27&gp=0.jpg" alt=""></span><i>嗨！ 我是可爱又善良的贞子！来和我一起来聊天吧！！</i></li>
+			<!-- <li class="right"></li> -->
+		</ul>
+		<footer>
+			<img src="imgs/1.png" alt="" id='im'>
+            <textarea name="" cols="10" rows="10" id='text'>
+
+
+
+            </textarea>
+            <!-- <input type="submit" value="发送" id='but'> -->
+		</footer>
+	</section>
+    <script src='js.js'></script>
+	<script>
+
+ 
+      
+              
+
+              function my$(id){
+              	return document.getElementById(id);
+              }
+
+             
+              document.onkeydown = function (e){
+              e = e || window.event;
+              var keycode = e.keyCode || e.which;
+              if(keycode == 13 && my$('text').value != ''){
+
+
+              console.log(my$('text').value)
+              var kk = 0;
+		      var obj =  {           
+             // "userid": "12345"
+              }
+                function callback(num){
+
+                 	    num = JSON.parse(num);
+                        kk = num.text;
+                        console.log(kk)
+                    } 
+// console.log(kk)
+              getAjax(`http://www.tuling123.com/openapi/api?key=5e6702a39c654864a149cf5cb2450ae9&info=${my$('text').value}userid="12345"`,obj,callback);
+
+
+
+              var _random = Math.round(Math.random()*(4000-1000)+1000)
+
+              var liobj = document.createElement('li');
+              var spanobj = document.createElement('span');
+              var iobj = document.createElement('i');
+              var imgobj = document.createElement('img');
+
+               	var ulobj = my$('uu');
+               	var txtobj = my$('text');
+               	if(txtobj.value.trim()){
+
+
+
+                liobj.className = 'right';
+
+               	iobj.innerHTML = txtobj.value;
+
+               	imgobj.src = 'imgs/u=2714753981,2175227074&fm=27&gp=0.jpg';
+
+               	spanobj.appendChild(imgobj);
+
+               	liobj.appendChild(iobj);
+
+               	liobj.appendChild(spanobj);
+
+                ulobj.appendChild(liobj);
+
+
+                 	}
+
+                 my$('uu').scrollTop = my$('uu').scrollHeight - my$('uu').clientHeight;
+                 
+                 
+               	          
+              function auto (){
+
+
+
+            
+
+              var liobj = document.createElement('li');
+              var spanobj = document.createElement('span');
+              var iobj = document.createElement('i');
+              var imgobj = document.createElement('img');
+
+
+
+
+              	var ulobj = my$('uu');
+
+               	var txtobj = my$('text');
+
+               	// console.log(txtobj.value)
+              // console.log(txtobj.value)
+           
+                liobj.className = 'left';
+                
+                iobj.innerHTML = kk;
+
+               	imgobj.src = 'imgs/u=1264734548,3207478775&fm=27&gp=0.jpg';
+
+               	spanobj.appendChild(imgobj);
+
+               	liobj.appendChild(spanobj);
+
+               	liobj.appendChild(iobj);
+
+                ulobj.appendChild(liobj);
+
+                
+                 my$('uu').scrollTop = my$('uu').scrollHeight - my$('uu').clientHeight;
+
+
+                 // txtobj.value ='';
+                       
+
+                 	}
+                     if(txtobj.value != ''){
+
+                     var txt = txtobj.value;
+
+                       txtobj.value ='';
+                       
+                      setTimeout(auto,_random);
+                           
+
+                     }
+
+
+        }
+
+               	          }
+                         
+
+	</script>
+</body>
+</html>
